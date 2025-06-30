@@ -13,11 +13,11 @@ export default defineConfig({
     // Resize the viewport to 1280px x 768px
     viewportWidth: 1280,
     viewportHeight: 768,
-    baseUrl: "https://staging2.yssofindia.org/",
+    baseUrl: "https://yssofindia.org/",
     chromeWebSecurity: false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      const environmentName = config.env.environmentName || "staging";
+      const environmentName = config.env.environmentName || "release";
       const environmentFilename = `./env/${environmentName}.settings.json`;
       console.warn("loading %s", environmentFilename);
       const settings = require(environmentFilename);

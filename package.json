@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "allure:report": "allure generate allure-results --name 'Bookstore' --clean -o allure-reports",
+    "allure:report": "allure generate allure-results --name 'English_Pages' --clean -o allure-reports",
     "allure:clear": "rm -r allure-results/** && cp -r allure-reports/history/ allure-results && rm -r allure-reports/**",
     "pretest": "npm run allure:clear",
     "test": "npm run cypress-test || npm run posttest",
