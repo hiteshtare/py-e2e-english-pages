@@ -1,4 +1,5 @@
 export const TEST_CONFIG = {
+  maximumPageLoadTime: 5.000,
   //WPMLs
   buttonWPMLHindi: ".wpml-ls-item-hi",
   buttonWPMLTamil: ".wpml-ls-item-ta",

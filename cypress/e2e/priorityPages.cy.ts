@@ -1,4 +1,5 @@
 // Import common util
+import { TEST_CONFIG } from "./config";
 import { captureSreenshot } from "./util/common.util";
 
 // using baseURL
@@ -60,7 +61,7 @@ describe("Priority Pages", () => {
   testDataForItems.forEach((testCase: any, index: number) => {
     it(`#${index} page ${
       testCase.label
-    } should have Page Load Time less than 2 seconds`, () => {
+    } should have Page Load Time less than ${TEST_CONFIG.maximumPageLoadTime} seconds`, () => {
       cy.visit(`${testCase.url}`);
       cy.window().then((win) => {
         const [navigationTiming] = win.performance.getEntriesByType(
@@ -72,7 +73,7 @@ describe("Priority Pages", () => {
             1000
           ).toFixed(4);
           cy.log(`Total Load Time: ${pageLoadTime} s`);
-          expect(pageLoadTime).to.be.lessThan(2.0);
+          expect(pageLoadTime).to.be.lessThan(TEST_CONFIG.maximumPageLoadTime);
         }
       });
       captureSreenshot();
