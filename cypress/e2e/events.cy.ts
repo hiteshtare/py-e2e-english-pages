@@ -24,7 +24,7 @@ beforeEach(function () {
 describe("Events", () => {
   testDataForItems.forEach((testCase: any, index: number) => {
     it(`#${index} page ${testCase.label} should have Page Load Time less than ${TEST_CONFIG.maximumPageLoadTime} seconds`, () => {
-      const fullURL = `${baseUrl}${testCase.match_url}`;
+      const fullURL = `${baseUrl}${testCase.url}`;
       cy.visit(`${fullURL}`);
       cy.window().then((win) => {
         const [navigationTiming] = win.performance.getEntriesByType(
