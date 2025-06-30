@@ -35,7 +35,7 @@ describe("Priority Pages", () => {
         ) as PerformanceNavigationTiming[];
         if (navigationTiming) {
           const pageLoadTime = + (
-            (navigationTiming.loadEventEnd - navigationTiming.startTime) /
+            (navigationTiming.domComplete - navigationTiming.startTime) /
             1000
           ).toFixed(4);
           const ttfb =
@@ -73,7 +73,7 @@ describe("Priority Pages", () => {
   //     ) as PerformanceNavigationTiming[];
   //     if (navigationTiming) {
   //       const pageLoadTime =
-  //         + ((navigationTiming.loadEventEnd - navigationTiming.startTime) / 1000).toFixed(4);
+  //         + ((navigationTiming.domComplete - navigationTiming.startTime) / 1000).toFixed(4);
   //       const ttfb =
   //         navigationTiming.responseStart - navigationTiming.startTime;
   //       const fcp =

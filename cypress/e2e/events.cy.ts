@@ -32,7 +32,7 @@ describe("Events", () => {
         ) as PerformanceNavigationTiming[];
         if (navigationTiming) {
           const pageLoadTime = + (
-            (navigationTiming.loadEventEnd - navigationTiming.startTime) /
+            (navigationTiming.domComplete - navigationTiming.startTime) /
             1000
           ).toFixed(4);
           const ttfb =
