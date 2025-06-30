@@ -1,26 +1,26 @@
 [
   {
     "label": "1-Ranchi Ashram / English",
-    "url": "/location/ranchi"
+    "url": "/location/ranchi?1920"
   },
   {
     "label": "2-Ranchi events schedule / English",
-    "url": "/location/ranchi/event-schedule"
+    "url": "/location/ranchi/event-schedule?1920"
   },
   {
     "label": "3-Ranchi how to reach / English",
-    "url": "/location/ranchi/how-to-reach"
+    "url": "/location/ranchi/how-to-reach?1920"
   },
   {
     "label": "4-Chennai Ashram / English",
-    "url": "/location/chennai"
+    "url": "/location/chennai?1920"
   },
   {
     "label": "5-Chennai events schedule / English",
-    "url": "/location/chennai/event-schedule"
+    "url": "/location/chennai/event-schedule?1920"
   },
   {
     "label": "6-Chennai how to reach / English",
-    "url": "/location/chennai/how-to-reach"
+    "url": "/location/chennai/how-to-reach?1920"
   }
 ]
