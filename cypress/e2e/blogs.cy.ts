@@ -32,7 +32,7 @@ describe("Blogs", () => {
         ) as PerformanceNavigationTiming[];
         if (navigationTiming) {
           const pageLoadTime = + (
-            (navigationTiming.domComplete - navigationTiming.startTime) /
+            (navigationTiming.domContentLoadedEventEnd - navigationTiming.startTime) /
             1000
           ).toFixed(4);
           const ttfb =
