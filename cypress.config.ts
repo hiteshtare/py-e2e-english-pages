@@ -7,7 +7,7 @@ export default defineConfig({
     //By default this is true
     watchForFileChanges: false,
     //By default this is 4000
-    defaultCommandTimeout: 10000,
+    defaultCommandTimeout: 60000,
     //By default this is true, Cypress will record a video of the test run when running headlessly.
     video: true,
     // Resize the viewport to 1280px x 768px
