@@ -3,6 +3,8 @@ import { TEST_CONFIG } from "./config";
 import { captureSreenshot } from "./util/common.util";
 
 // using baseURL
+const baseUrl = Cypress.config("baseUrl");
+
 const testDataForItems = require("../fixtures/priority-pages.json");
 
 beforeEach(function () {
@@ -24,7 +26,9 @@ describe("Priority Pages", () => {
   testDataForItems.forEach((testCase: any, index: number) => {
      it(`#${index} page ${
       testCase.label
-    } should have Page Load Time less than ${TEST_CONFIG.maximumPageLoadTime} seconds`, () => {
+       } should have Page Load Time less than ${TEST_CONFIG.maximumPageLoadTime} seconds`, () => {
+      // const fullURL = `${baseUrl}${testCase.match_url}`;
+      // cy.visit(`${fullURL}`);
       cy.visit(`${testCase.url}`);
       cy.window().then((win) => {
         const [navigationTiming] = win.performance.getEntriesByType(
