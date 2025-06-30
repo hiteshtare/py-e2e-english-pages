@@ -27,9 +27,8 @@ describe("Priority Pages", () => {
      it(`#${index} page ${
       testCase.label
        } should have Page Load Time less than ${TEST_CONFIG.maximumPageLoadTime} seconds`, () => {
-      // const fullURL = `${baseUrl}${testCase.match_url}`;
-      // cy.visit(`${fullURL}`);
-      cy.visit(`${testCase.url}`);
+      const fullURL = `${baseUrl}${testCase.url}`;
+      cy.visit(`${fullURL}`);
       cy.window().then((win) => {
         const [navigationTiming] = win.performance.getEntriesByType(
           "navigation"
