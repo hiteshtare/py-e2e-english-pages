@@ -1,0 +1,38 @@
+{
+  "name": "py-e2e-english-pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "allure:report": "allure generate allure-results --name 'Bookstore' --clean -o allure-reports",
+    "allure:clear": "rm -r allure-results/** && cp -r allure-reports/history/ allure-results && rm -r allure-reports/**",
+    "pretest": "npm run allure:clear",
+    "test": "npm run cypress-test || npm run posttest",
+    "cypress-test": "cypress run --env environmentName=staging,allure=true",
+    "posttest": "npm run allure:report",
+    "pretest:staging": "npm run allure:clear",
+    "test:staging": "npm run test:staging:parallel || npm run posttest:staging",
+    "test:staging:parallel": "cypress-parallel -s cypress-test:staging -t 4 -d 'cypress/e2e/**/*.cy.ts' -o 'cypressParallel=true'",
+    "cypress-test:staging": "cypress run --env environmentName=staging,allure=true",
+    "posttest:staging": "npm run allure:report",
+    "pretest:release": "npm run allure:clear",
+    "test:release": "npm run test:release:parallel || npm run posttest:release",
+    "test:release:parallel": "cypress-parallel -s cypress-test:release -t 4 -d 'cypress/e2e/**/*.cy.ts' -o 'cypressParallel=true'",
+    "cypress-test:release": "cypress run --env environmentName=release,allure=true",
+    "posttest:release": "npm run allure:report"
+  },
+  "keywords": [],
+  "author": "Hitesh Tare",
+  "license": "ISC",
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-cypress": "^3.2.2",
+    "cypress": "^14.3.3",
+    "cypress-iframe": "^1.0.1",
+    "cypress-parallel": "^0.15.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.29.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "baseUrl": "https://staging2.yssofindia.org/",
+  "env": {
+    "greeting": "Alright PY! lets start Cypress on Test site",
+    "LOGIN_EMAIL": "hiteshtare@gmail.com",
+    "LOGIN_PASSWORD": "2wsx@WSX22",
+    "BILLING_EMAIL": "reppintaylors@gmail.com", 
+    "BILLING_PHONE": "9833887224",
+    "BILLING_FIRST_NAME": "TEST",
+    "BILLING_LAST_NAME": "PY",
+    "BILLING_ADDR1": "Mira Road",
+    "BILLING_CITY": "Mumbai",
+    "BILLING_STATE": "MH",
+    "BILLING_POSTCODE": "401107"
+  }
+}
